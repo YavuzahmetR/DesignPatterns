@@ -1,3 +1,7 @@
+using DesignPattern.ChainOfResponsibility.ChainOfResponsibilty;
+using DesignPattern.ChainOfResponsibility.DAL;
+using Microsoft.EntityFrameworkCore;
+
 namespace DesignPattern.ChainOfResponsibility
 {
     public class Program
@@ -8,7 +12,11 @@ namespace DesignPattern.ChainOfResponsibility
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+            builder.Services.AddScoped<IEmployeeChainBuilder, EmployeeChainBuilder>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

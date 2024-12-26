@@ -1,0 +1,16 @@
+﻿@model CustomerProcessViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <br />
+    <form method="post">
+        <label>"Customer Name Surname "</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <label>"Amount Of Money Withdrawn "</label>
+        <input type="text" asp-for="Amount" class="form-control" />
+        <button class="btn-warning">Para Çek</button>
+    </form>
+</div>
+
