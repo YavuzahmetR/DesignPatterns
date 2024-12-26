@@ -1,0 +1,30 @@
+﻿@model DesignPattern.CQRS.CQRS.Results.GetProductUpdateQueryResult
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <form method="post">
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" asp-for="Price" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Stock</label>
+            <input type="text" class="form-control" asp-for="Stock" />
+        </div>
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </form>
+   
+</div>
