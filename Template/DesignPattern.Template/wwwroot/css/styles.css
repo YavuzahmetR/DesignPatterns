@@ -1,0 +1,67 @@
+﻿/* Genel stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #000;*/ /* Arkaplan siyah */
+    color: #fff;
+    /*    display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.plan-card {
+    border: 3px solid #e50914;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+    .plan-card h1 {
+        font-size: 1.8em;
+        color: #e50914;
+        margin-bottom: 15px;
+    }
+
+    .plan-card p {
+        font-size: 1.2em;
+        margin: 5px 0;
+    }
+
+.buttons a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Standart Plan butonu */
+.btn-warning {
+    background-color: #ffa31a;
+    border: 2px solid #e68a00;
+}
+
+    .btn-warning:hover {
+        background-color: #e68a00;
+        transform: scale(1.05);
+    }
+
+/* Premium Plan butonu */
+.btn-success {
+    background-color: #28a745;
+    border: 2px solid #218838;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }

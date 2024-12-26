@@ -1,0 +1,20 @@
+﻿@model DesignPattern.Template.TemplatePattern.UltraPlan
+@{
+    ViewData["Title"] = "UltraPlan";
+}
+
+<link rel="stylesheet" href="~/css/styles.css">
+<div class="container">
+    <div class="plan-card standart">
+        <h1>@Model.PlanTypeValue Plan</h1>
+        <p>Price: $@Model.PriceValue</p>
+        <p>Resolution: @Model.ResolutionValue</p>
+        <p>Max Users: @Model.CountPersonValue</p>
+        <p>Contents: @Model.ContentsValue</p>
+    </div>
+    <div class="buttons">
+        <a href="/Default/Index" class="btn btn-warning">Basic Plan</a>
+        <a href="/Default/UltraPlan" class="btn btn-success">Premium Plan</a>
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+﻿@model DesignPattern.Template.TemplatePattern.NetflixPlans
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/styles.css">
+
+
+<div class="container">
+    <div class="plan-card">
+        <h1>@Model.PlanTypeValue Plan</h1>
+        <p>Price: $@Model.PriceValue</p>
+        <p>Resolution: @Model.ResolutionValue</p>
+        <p>Max Users: @Model.CountPersonValue</p>
+        <p>Contents: @Model.ContentsValue</p>
+    </div>
+    <div class="buttons">
+        <a href="/Default/StandartPlan" class="btn btn-warning">Standart Plan</a>
+        <a href="/Default/UltraPlan" class="btn btn-success">Premium Plan</a>
+    </div>
+</div>
+
+
+
+
