@@ -1,0 +1,33 @@
+﻿@using DesignPattern.Entity.Concrete
+@model List<Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Customer List</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="mt-3">
+    <a asp-action="MoneyTransfer" class="btn btn-primary">Go to Money Transfer</a>
+</div>
+

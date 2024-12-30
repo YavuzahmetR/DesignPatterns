@@ -1,0 +1,61 @@
+﻿@model CustomerProcessViewModel 
+
+
+
+@{
+    ViewData["Title"] = "MoneyTransfer";
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#SenderId").change(function () {
+                var senderId = $("#SenderId").val();
+                $.ajax({
+                    url: "/Default/GetCustomerBalance",
+                    type: "GET",
+                    data: { id: senderId },
+                    success: function (data) {
+                        $("#SenderBalance").val(data);
+                    }
+                });
+            });
+        });</script>
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/errorMessage.css" rel="stylesheet" />
+
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+<h2>Para Transferi</h2>
+<br />
+<form asp-action="MoneyTransfer" method="post">
+    <div class="form-group">
+        <label for="SenderId">Sender Person</label>
+        <select asp-for="SenderId" class="form-control" asp-items="ViewBag.Customers">
+            <option value="">Select Sender</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="SenderBalance">Sender Balance</label>
+        <input type="number" class="form-control" id="SenderBalance" disabled />
+    </div>
+    <div class="form-group">
+        <label for="ReceiverId">Receiver Person</label>
+        <select asp-for="ReceiverId" class="form-control" asp-items="ViewBag.Customers">
+            <option value="">Select Receiver</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Cost">Transfer Cost</label>
+        <input type="number" class="form-control" asp-for="Cost" />
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
