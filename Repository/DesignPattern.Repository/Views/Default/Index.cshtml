@@ -1,0 +1,36 @@
+﻿@model List<DesignPattern.Entity.Concrete.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Product List</h1>
+
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Stock</td>
+                <td>@product.Price</td>
+                <td>@product.Category.Name</td>
+                <td>
+                    <a asp-action="UpdateProduct" asp-route-id="@product.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="DeleteProduct" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="CreateProduct" class="btn btn-primary">Add New Product</a>

@@ -1,0 +1,22 @@
+﻿@model DesignPattern.Entity.Concrete.Product
+
+@{
+    ViewData["Title"] = "DeleteProduct";
+}
+
+<h1>Delete Product</h1>
+
+<p>Are you sure you want to delete the product <strong>@Model.Name</strong>?</p>
+<div class="row">
+    <form asp-action="DeleteProduct" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+    </form>
+    
+</div>
+
+
+
+
+
