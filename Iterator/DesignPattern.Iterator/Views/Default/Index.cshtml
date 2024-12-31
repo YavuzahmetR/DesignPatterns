@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Visit Routes</h2>
+
+@if (ViewBag.Routes != null && ViewBag.Routes.Count > 0)
+{
+    <ul>
+        @foreach (var route in ViewBag.Routes)
+        {
+            <li>@route</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No routes available to display.</p>
+}
+
