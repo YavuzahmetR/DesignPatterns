@@ -1,0 +1,22 @@
+﻿@using DesignPattern.Mediator.Mediators.Results
+@model GetProductByIdQueryResult
+@{
+    ViewData["Title"] = "GetProduct";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h1>GetProduct</h1>
+
+<div class="container">
+    <br />
+    <form asp-action="GetProduct" method="get">
+        <input type="hidden" asp-for="Id">
+        <br />
+        <label asp-for="Name"></label>
+        <input type="text" class="form-control" asp-for="Name" readonly>
+        <br />
+        <label asp-for="Stock"></label>
+        <input type="text" class="form-control" asp-for="Stock" readonly>
+    </form>
+</div>
+
+
